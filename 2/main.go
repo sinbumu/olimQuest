@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -47,6 +48,9 @@ func main() {
 	strtmp = strings.Replace(strtmp, "\r", "", -1)
 	strtmp = strings.Replace(strtmp, "\n", "", -1)
 
+	//시간체크
+	start := time.Now()
+
 	i, err := strconv.Atoi(strtmp)
 	if err != nil {
 		log.Fatal(err)
@@ -57,6 +61,8 @@ func main() {
 	//위에 두 피보나치 일반항*2값을 더한게 n달차 너구리 총합. (부동소수점 문제 안생기게 반올림 처리)
 	result := fmt.Sprint(math.Round(fiboN + fiboNp1))
 	fmt.Println("result >> ", result)
+
+	fmt.Println("time  : ", time.Now().Sub(start))
 }
 
 func fibo(n float64) float64 {

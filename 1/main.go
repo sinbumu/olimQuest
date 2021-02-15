@@ -23,7 +23,9 @@ func main() {
 	}
 	fmt.Printf("입력값 : %s\n", strtmp)
 
+	//시간체크
 	start := time.Now()
+	//시간체크 end
 
 	//스택을 사용. 스택은 라이브러리 있는거 사용.
 	var stack stack.Stack
@@ -62,11 +64,9 @@ func main() {
 		result = true
 	}
 
-	t := time.Now()
-	elapsed := t.Sub(start)
-
 	fmt.Println("result : ", result)
-	fmt.Println("time  : ", elapsed)
+
+	fmt.Println("time  : ", time.Now().Sub(start))
 }
 
 func strContains(s string, arr []string) bool {
